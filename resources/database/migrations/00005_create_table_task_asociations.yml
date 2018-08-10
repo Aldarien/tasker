@@ -1,0 +1,18 @@
+action: create
+table: task_asociations
+columns:
+  - name: id
+    type: int
+    primary: true
+    unsigned: true
+  - name: task_id
+    type: int
+    unsigned: true
+    foreign: Task
+  - name: asociated
+    type: varchar
+    length: 20
+  - name: asociated_id
+    type: int
+    unsigned: true
+    "null": false

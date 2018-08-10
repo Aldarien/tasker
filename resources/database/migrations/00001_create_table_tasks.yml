@@ -1,0 +1,12 @@
+action: create
+table: tasks
+columns:
+  - name: id
+    type: int
+    primary: true
+    unsigned: true
+  - name: title
+    type: varchar
+    length: 100
+  - name: description
+    type: text
