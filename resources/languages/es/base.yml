@@ -1,0 +1,17 @@
+people: personas
+person: persona
+tasks: tareas
+task: tarea
+places: lugares
+place: lugar
+projects: proyectos
+project: proyecto
+add person: agregar persona
+names: nombres
+last name: apellido paterno
+second last name: apellido materno
+add: agregar
+edit: editar
+list: lista
+home: inicio
+there are no people: No hay personas

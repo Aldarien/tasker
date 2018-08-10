@@ -1,0 +1,16 @@
+action: create
+table: people
+columns:
+  - name: id
+    type: int
+    primary: true
+    unsigned: true
+  - name: names
+    type: varchar
+    length: 100
+  - name: last_name
+    type: varchar
+    length: 50
+  - name: last_name2
+    type: varchar
+    length: 50

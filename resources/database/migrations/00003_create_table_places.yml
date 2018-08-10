@@ -1,0 +1,10 @@
+action: create
+table: places
+columns:
+  - name: id
+    type: int
+    primary: true
+    unsigned: true
+  - name: description
+    type: varchar
+    length: 100
