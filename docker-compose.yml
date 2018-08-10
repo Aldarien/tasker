@@ -1,0 +1,29 @@
+version: "3.7"
+
+services:
+  web:
+    build: .
+    restart: always
+    volumes:
+      - .:/var/www/tasker
+    ports:
+      - 8080:80
+    depends_on:
+      - db
+    links:
+      - db:mysql
+
+  db:
+    image: mariadb
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: test
+      MYSQL_DATABASE: tasker
+      MYSQL_USER: tasker
+      MYSQL_PASSWORD: tasker
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8081:8080
