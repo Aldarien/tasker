@@ -1,16 +1,14 @@
 FROM php:7.2-apache
-COPY . /var/www/tasker
+COPY . /var/www
 
-# RUN ls /var/www/tasker
-
-# RUN chmod -R 777 /var/www/tasker/public
-# RUN chmod -R 777 /var/www/tasker/cache
-
-ENV APACHE_DOCUMENT_ROOT /var/www/tasker/public
-
+ENV APACHE_DOCUMENT_ROOT /var/www/public
 RUN sed -ri -e 's!/var/www/html!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/sites-available/*.conf
 RUN sed -ri -e 's!/var/www/!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/apache2.conf /etc/apache2/conf-available/*.conf
+# RUN echo 'LogLevel debug rewrite:trace6'>>/etc/apache2/apache2.conf
+
+# RUN sed -ri -e 's!/etc/apache2/mods-available/alias.conf!$# !g' /etc/apache2/apache2.conf
+RUN unlink /etc/apache2/mods-enabled/alias.conf
 
 RUN a2enmod rewrite
 
-RUN docker-php-ext-install mysqli pdo pdo_mysql
+RUN docker-php-ext-install -j$(nproc) mysqli pdo pdo_mysql
