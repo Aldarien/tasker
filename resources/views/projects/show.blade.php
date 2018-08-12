@@ -2,15 +2,15 @@
 
 @section('heading')
   <div class="ui two column grid">
-    <div class="column">{{t('Person')}}</div>
+    <div class="column">{{t('Project')}}</div>
     <div class="right aligned column">
-      <a href="{{url('/people/edit/' . $person->id)}}"><i class="edit icon"></i></a>
+      <a href="{{url('/projects/edit/' . $project->id)}}"><i class="edit icon"></i></a>
     </div>
   </div>
 @endsection
 
 @section('content')
   <div class="ui segment">
-    {{$person->name()}}
+    {{$project->description}}
   </div>
 @endsection

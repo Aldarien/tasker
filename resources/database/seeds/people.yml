@@ -1,0 +1,8 @@
+table: people
+action: insert
+values:
+  - names: Juan Pablo
+    last_name: Vial
+    last_name2: Rodriguez
+  - names: Iris
+    last_name: Zuñiga

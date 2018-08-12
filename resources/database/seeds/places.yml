@@ -1,0 +1,7 @@
+table: places
+action: insert
+values:
+  - description: Casa
+  - description: Oficina
+  - description: La Gloria
+  - description: Contabilidad

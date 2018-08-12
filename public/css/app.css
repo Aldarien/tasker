@@ -6096,8 +6096,8 @@ a.ui.inverted.grey.header:hover {
 *******************************/
 @font-face {
   font-family: 'Icons';
-  src: url("../icons/icons.eot");
-  src: url("../icons/icons.eot?#iefix") format("embedded-opentype"), url("../icons/icons.woff2") format("woff2"), url("../icons/icons.woff") format("woff"), url("../icons/icons.ttf") format("truetype"), url("../icons/icons.svg#icons") format("svg");
+  src: url("/icons/icons.eot");
+  src: url("/icons/icons.eot?#iefix") format("embedded-opentype"), url("/icons/icons.woff2") format("woff2"), url("/icons/icons.woff") format("woff"), url("/icons/icons.ttf") format("truetype"), url("/icons/icons.svg#icons") format("svg");
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -10066,8 +10066,8 @@ i.icon.youtube.play:before {
 /* Load & Define Icon Font */
 @font-face {
   font-family: 'outline-icons';
-  src: url("../icons/outline-icons.eot");
-  src: url("../icons/outline-icons.eot?#iefix") format("embedded-opentype"), url("../icons/outline-icons.woff2") format("woff2"), url("../icons/outline-icons.woff") format("woff"), url("../icons/outline-icons.ttf") format("truetype"), url("../icons/outline-icons.svg#icons") format("svg");
+  src: url("/icons/outline-icons.eot");
+  src: url("/icons/outline-icons.eot?#iefix") format("embedded-opentype"), url("/icons/outline-icons.woff2") format("woff2"), url("/icons/outline-icons.woff") format("woff"), url("/icons/outline-icons.ttf") format("truetype"), url("/icons/outline-icons.svg#icons") format("svg");
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -10446,8 +10446,8 @@ i.icon.star.empty:before {
 /* Load & Define Brand Font */
 @font-face {
   font-family: 'brand-icons';
-  src: url("../icons/brand-icons.eot");
-  src: url("../icons/brand-icons.eot?#iefix") format("embedded-opentype"), url("../icons/brand-icons.woff2") format("woff2"), url("../icons/brand-icons.woff") format("woff"), url("../icons/brand-icons.ttf") format("truetype"), url("../icons/brand-icons.svg#icons") format("svg");
+  src: url("/icons/brand-icons.eot");
+  src: url("/icons/brand-icons.eot?#iefix") format("embedded-opentype"), url("/icons/brand-icons.woff2") format("woff2"), url("/icons/brand-icons.woff") format("woff"), url("/icons/brand-icons.ttf") format("truetype"), url("/icons/brand-icons.svg#icons") format("svg");
   font-style: normal;
   font-weight: normal;
   font-variant: normal;

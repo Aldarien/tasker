@@ -9,6 +9,7 @@ use App\Alias\Model;
  */
 class Project extends Model
 {
+  public static $_table = 'projects';
   public function tasks()
   {
     return \model(Task::class)

@@ -10,6 +10,7 @@ use App\Alias\Model;
  */
 class Task extends Model
 {
+  public static $_table = 'tasks';
   protected $asociated;
   public function tasks()
   {
@@ -26,8 +27,8 @@ class Task extends Model
       $query = "SELECT asociated_id, asociated FROM task_asociations WHERE task_id = ?";
       $stmt = \ORM::getDb()->prepare($query);
       $stmt->execute([$this->id]);
+      $output = [];
       if ($stmt->rowCount() > 0) {
-        $output = [];
         $R = $stmt->fetchAll(\PDO::FETCH_OBJ);
         foreach ($R as $r) {
           switch ($r->asociated) {
@@ -45,8 +46,8 @@ class Task extends Model
               break;
           }
         }
-        $this->asociated = $output;
       }
+      $this->asociated = $output;
     }
     return $this->asociated;
   }

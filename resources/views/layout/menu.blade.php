@@ -1,9 +1,24 @@
 <div class="ui menu">
   <a href="{{url()}}" class="item">{{t('Home')}}</a>
   <div class="ui dropdown link item">
+    <span class="text">{{t('Tasks')}}</span>
+    <i class="dropdown icon"></i>
+    @include('layout.menu.tasks')
+  </div>
+  <div class="ui dropdown link item">
     <span class="text">{{t('People')}}</span>
     <i class="dropdown icon"></i>
     @include('layout.menu.people')
+  </div>
+  <div class="ui dropdown link item">
+    <span class="text">{{t('Places')}}</span>
+    <i class="dropdown icon"></i>
+    @include('layout.menu.places')
+  </div>
+  <div class="ui dropdown link item">
+    <span class="text">{{t('Projects')}}</span>
+    <i class="dropdown icon"></i>
+    @include('layout.menu.projects')
   </div>
 </div>
 <br />
