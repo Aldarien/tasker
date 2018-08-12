@@ -1,0 +1,10 @@
+table: projects
+action: insert
+values:
+  - description: Portal la Viña 2
+  - description: Portal la Viña 3
+  - description: Portal la Viña 4
+  - description: Portal la Viña 5
+  - description: Don Exequiel
+  - description: Optimus
+  - description: Bosques de Madrid

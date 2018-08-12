@@ -8,4 +8,5 @@ return [
   "languages" => "{locations.resources}/languages",
   "database" => "{locations.resources}/database",
   "migrations" => "{locations.database}/migrations",
+  "seeds" => "{locations.database}/seeds"
 ];

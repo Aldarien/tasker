@@ -55,6 +55,7 @@ class People extends Controller
       }
     }
     $person->save();
+    return $res->withRedirect(url('/people/' . $person->id));
   }
   public function remove(RequestInterface $req, ResponseInterface $res, $args)
   {

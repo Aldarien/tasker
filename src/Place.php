@@ -7,8 +7,9 @@ use App\Alias\Model;
  * @property int $id
  * @property string $description length=100
  */
-class Place
+class Place extends Model
 {
+  public static $_table = 'places';
   public function tasks()
   {
     return \model(Task::class)
