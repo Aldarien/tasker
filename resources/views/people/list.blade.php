@@ -6,22 +6,17 @@
 
 @section('content')
   @if (count($people) > 0)
-    <div class="ui list">
+    <div class="ui celled list">
       @foreach ($people as $person)
         <div class="item">
-          <div class="ui grid">
-            <div class="column"></div>
-            <div class="four wide column">
-              <a href="{{url('/people/' . $person->id)}}">{{$person->name()}}</a>
-            </div>
-            <div class="right aligned column">
-              <a href="{{url('/people/remove/' . $person->id)}}"><i class="times circle outline red icon"></i></a>
-            </div>
+          <a class="content" href="{{url('/people/' . $person->id)}}">{{$person->name()}}</a>
+          <div class="right floated content">
+            <a href="{{url('/people/remove/' . $person->id)}}"><i class="times circle outline red icon"></i></a>
           </div>
         </div>
       @endforeach
     </div>
   @else
-    <div class="ui warning segment">{{t('There are no people')}}.</div>
+    <div class="ui warning segment">{{t('There are no people')}}. <a href="{{url('/people/add')}}"><i class="plus icon"></i>{{t('Add')}}</a></div>
   @endif
 @endsection

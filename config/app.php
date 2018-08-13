@@ -2,5 +2,6 @@
 return [
   "debug" => true,
   "namespace" => "\\Tasker\\",
-  "language" => "es"
+  "language" => "es",
+  "timezone" => "America/Santiago"
 ];

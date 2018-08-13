@@ -25,6 +25,9 @@ $tasks_routes = [
     '/tasks' => [
       'get' => 'list'
     ],
+    '/tasks/add/{asociated}/{asociated_id}' => [
+      'get' => 'add'
+    ],
     '/tasks/add' => [
       'get' => 'add',
       'post' => 'do_add'
@@ -65,6 +68,10 @@ $people_routes = [
     ],
     '/people/remove/{id}' => [
       'get' => 'remove'
+    ],
+    '/people/assign/{id}' => [
+      'get' => 'assign',
+      'post' => 'do_assign'
     ]
   ]
 ];
@@ -88,6 +95,10 @@ $places_routes = [
     ],
     '/places/remove/{id}' => [
       'get' => 'remove'
+    ],
+    '/places/assign/{id}' => [
+      'get' => 'assign',
+      'post' => 'do_assign'
     ]
   ]
 ];
@@ -111,6 +122,10 @@ $projects_routes = [
     ],
     '/projects/remove/{id}' => [
       'get' => 'remove'
+    ],
+    '/projects/assign/{id}' => [
+      'get' => 'assign',
+      'post' => 'do_assign'
     ]
   ]
 ];

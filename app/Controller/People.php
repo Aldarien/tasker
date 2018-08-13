@@ -63,4 +63,23 @@ class People extends Controller
     $person->delete();
     return $res->withRedirect(url('/people'));
   }
+  public function assign(RequestInterface $req, ResponseInterface $res, $args)
+  {
+    $person = \model(PeopleModel::class)->findOne($args['id']);
+    $tasks = \model(Task::class)->orderByAsc('title')->findMany();
+    return $this->container->view->render($res, 'people.assign', compact('person', 'tasks'));
+  }
+  public function do_assign(RequestInterface $req, ResponseInterface $res, $args)
+  {
+    $person = \model(PeopleModel::class)->findOne($args['id']);
+    $data = [
+      $_POST['task'],
+      'person',
+      $person->id
+    ];
+    $q = "INSERT INTO task_asociations (task_id, asociated, asociated_id) VALUES (?, ?, ?)";
+    $st = \ORM::getDb()->prepare($q);
+    $st->execute($data);
+    return $res->withRedirect(url('/people/' . $person->id));
+  }
 }

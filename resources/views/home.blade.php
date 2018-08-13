@@ -6,4 +6,8 @@ Inicio
 
 @section('content')
 Bienvenid@
+
+@if (isset($tasks))
+  @include('tasks')
+@endif
 @endsection

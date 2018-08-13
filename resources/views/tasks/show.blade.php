@@ -22,16 +22,24 @@
           <a href="{{url('/tasks/assign/' . $task->id)}}"><i class="object group icon"></i></a>
         </div>
       </div>
+    </div>
+    <div class="ui list">
       @if (count($task->asociated()) > 0)
       @foreach ($task->asociated() as $asociated)
-        <div class="row">
-          <div class="column">
-            @if (is_a($asociated, \Tasker\Person::class))
-              {{$asociated->name()}}
-            @else
-              {{$asociated->description}}
-            @endif
-          </div>
+        <div class="item">
+          @if (is_a($asociated, \Tasker\Person::class))
+            <div class="header">{{t('Person')}}</div>
+            <div class="content"><a href="{{url('/people/' . $asociated->id)}}">{{$asociated->name()}}</a></div>
+          @elseif (is_a($asociated, \Tasker\Place::class))
+            <div class="header">{{t('Place')}}</div>
+            <a class="content" href="{{url('/places/' . $asociated->id)}}">{{$asociated->description}}</a>
+          @elseif (is_a($asociated, \Tasker\Project::class))
+            <div class="header">{{t('Project')}}</div>
+            <a class="content" href="{{url('/projects/' . $asociated->id)}}">{{$asociated->description}}</a>
+          @else
+            <div class="header">{{t('Task')}}</div>
+            <a class="content" href="{{url('/tasks/' . $asociated->id)}}">{{$asociated->title}}</a>
+          @endif
         </div>
       @endforeach
       @endif

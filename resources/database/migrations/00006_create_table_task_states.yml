@@ -1,0 +1,15 @@
+action: create
+table: task_states
+columns:
+  - name: id
+    type: int
+    primary: true
+    unsigned: true
+  - name: task_id
+    type: int
+    unsigned: true
+    foreign: Task
+  - name: state
+    type: int
+  - name: date
+    type: datetime

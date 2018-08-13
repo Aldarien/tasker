@@ -12,15 +12,7 @@ class Task extends Model
 {
   public static $_table = 'tasks';
   protected $asociated;
-  public function tasks()
-  {
-    return \model(Task::class)
-      ->select('tasks.*')
-      ->join('task_asociations', ['ta.task_id', '=', 'tasks.id'], 'ta')
-      ->where('ta.asociated', 'tasks')
-      ->where('ta.asociated_id', $this->id)
-      ->findMany();
-  }
+
   public function asociated()
   {
     if ($this->asociated == null) {
@@ -50,5 +42,20 @@ class Task extends Model
       $this->asociated = $output;
     }
     return $this->asociated;
+  }
+  public function state()
+  {
+    return $this->hasMany(TaskState::class)->orderByAsc('date')->findMany();
+  }
+  public function new()
+  {
+    parent::save();
+    $data = [
+      'task_id' => $this->id,
+      'state' => 0,
+      'date' => \Carbon\Carbon::now(config('app.timezone'))->format('Y-m-d H:i:s')
+    ];
+    $state = \model(TaskState::class)->create($data);
+    $state->save();
   }
 }

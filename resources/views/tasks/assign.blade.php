@@ -15,15 +15,19 @@
         <div class="menu">
           <div class="header">{{t('People')}}</div>
           @foreach ($people as $person)
-          <div class="item" data-value="person-{{$person->id}}">{{$person->name()}}</div>
+            <div class="item" data-value="person-{{$person->id}}">{{$person->name()}}</div>
           @endforeach
           <div class="header">{{t('Places')}}</div>
           @foreach ($places as $place)
-          <div class="item" data-value="place-{{$place->id}}">{{$place->description}}</div>
+            <div class="item" data-value="place-{{$place->id}}">{{$place->description}}</div>
           @endforeach
           <div class="header">{{t('Projects')}}</div>
           @foreach ($projects as $project)
-          <div class="item" data-value="project-{{$project->id}}">{{$project->description}}</div>
+            <div class="item" data-value="project-{{$project->id}}">{{$project->description}}</div>
+          @endforeach
+          <div class="header">{{t('Tasks')}}</div>
+          @foreach ($tasks as $task)
+            <div class="item" data-value="task-{{$task->id}}">{{$task->title}}</div>
           @endforeach
         </div>
       </div>

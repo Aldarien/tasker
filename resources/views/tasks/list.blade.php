@@ -6,23 +6,18 @@
 
 @section('content')
   @if (count($tasks) > 0)
-    <div class="ui list">
+    <div class="ui celled list">
       @foreach ($tasks as $task)
         <div class="item">
-          <div class="ui grid">
-            <div class="column"></div>
-            <div class="four wide column">
-              <a href="{{url('/tasks/' . $task->id)}}" class="content">{{$task->title}}</a>
-              <div class="content">{{$task->description}}</div>
-            </div>
-            <div class="right aligned column">
-              <a href="{{url('/tasks/remove/' . $task->id)}}"><i class="times circle outline red icon"></i></a>
-            </div>
+          <div class="right floated content">
+            <a href="{{url('/tasks/remove/' . $task->id)}}"><i class="times circle outline red icon"></i></a>
           </div>
+          <a href="{{url('/tasks/' . $task->id)}}" class="header">{{$task->title}}</a>
+          <div class="content">{{$task->description}}</div>
         </div>
       @endforeach
     </div>
   @else
-    <div class="ui warning segment">{{t('There are no tasks')}}.</div>
+    <div class="ui warning segment">{{t('There are no tasks')}}. <a href="{{url('/tasks/add')}}"><i class="plus icon"></i>{{t('Add')}}</a></div>
   @endif
 @endsection

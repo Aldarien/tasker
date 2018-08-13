@@ -6,6 +6,9 @@
 
 @section('content')
   <form class="ui form" method="post" action="{{url('/tasks/add')}}">
+    @if (isset($asociated))
+      <input type="hidden" name="asociated" value="{{$asociated}}" />
+    @endif
     <div class="field">
       <label>{{t('Title')}}</label>
       <input type="text" name="title" />

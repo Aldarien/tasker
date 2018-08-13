@@ -59,4 +59,23 @@ class Places extends Controller
     $place->delete();
     return $res->withRedirect(url('/places'));
   }
+  public function assign(RequestInterface $req, ResponseInterface $res, $args)
+  {
+    $place = \model(PlaceModel::class)->findOne($args['id']);
+    $tasks = \model(Task::class)->orderByAsc('title')->findMany();
+    return $this->container->view->render($res, 'places.assign', compact('place', 'tasks'));
+  }
+  public function do_assign(RequestInterface $req, ResponseInterface $res, $args)
+  {
+    $place = \model(PlaceModel::class)->findOne($args['id']);
+    $data = [
+      $_POST['task'],
+      'place',
+      $place->id
+    ];
+    $q = "INSERT INTO task_asociations (task_id, asociated, asociated_id) VALUES (?, ?, ?)";
+    $st = \ORM::getDb()->prepare($q);
+    $st->execute($data);
+    return $res->withRedirect(url('/places/' . $place->id));
+  }
 }
