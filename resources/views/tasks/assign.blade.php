@@ -8,7 +8,7 @@
   <form class="ui form" method="post" action="{{url('/tasks/assign/' . $task->id)}}">
     <div class="field">
       <label>{{t('Asociated')}}</label>
-      <div class="ui selection dropdown">
+      <div class="ui selection dropdown form_dropdown">
         <input type="hidden" name="asociated" />
         <i class="dropdown icon"></i>
         <div class="default text">{{t('Asociated')}}</div>
@@ -31,3 +31,11 @@
     <button class="ui button" type="submit">{{t('Assign')}}</button>
   </form>
 @endsection
+
+@push('scripts')
+  <script type="text/javascript">
+  $('.ui.dropdown.form_dropdown').dropdown({
+    action: 'activate'
+  });
+  </script>
+@endpush
