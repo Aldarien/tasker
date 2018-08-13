@@ -21,6 +21,8 @@ services:
       MYSQL_DATABASE: tasker
       MYSQL_USER: tasker
       MYSQL_PASSWORD: tasker
+    volumes:
+      - mysql-data:/var/lib/mysql
 
   adminer:
     image: adminer
@@ -29,3 +31,6 @@ services:
       - 8081:8080
     environment:
       ADMINER_DESIGN: mvt
+
+volumes:
+  mysql-data:
